@@ -1,11 +1,25 @@
 {
-  "name": "adventofcode2021",
-  "version": "1.0.0",
-  "description": "Advent of Code Challenge 2021",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "adventofcode2021",
+    "version": "1.0.0",
+    "description": "Advent of Code Challenge 2021",
+    "main": ".build/index.js",
+    "scripts": {
+        "lint": "eslint . --ext .ts",
+        "format": "npx prettier --write .",
+        "clean": "npm run lint && npm run format",
+        "build": "tsc --project tsconfig.json",
+        "clean-build": "npm run clean && npm run build",
+        "start": "node ./build/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^16.11.12",
+        "@typescript-eslint/eslint-plugin": "^5.8.0",
+        "@typescript-eslint/parser": "^5.8.0",
+        "eslint": "^8.5.0",
+        "prettier": "2.5.1",
+        "typescript": "^4.5.4"
+    }
 }
